@@ -1,6 +1,6 @@
 {
-  "name": "@maptiler/sdk",
-  "version": "3.3.0",
+  "name": "@acretrader/maptiler-sdk",
+  "version": "3.3.1",
   "description": "The Javascript & TypeScript map SDK tailored for MapTiler Cloud",
   "author": "MapTiler",
   "module": "dist/maptiler-sdk.mjs",
@@ -32,7 +32,7 @@
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maptiler/maptiler-sdk-js.git"
+    "url": "git+https://github.com/acretrader/maptiler-sdk-js-fork.git"
   },
   "scripts": {
     "prepare": "husky",
