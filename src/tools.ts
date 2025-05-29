@@ -46,6 +46,12 @@ export function maptilerCloudTransformRequest(url: string, resourceType?: Resour
     // Yet, if it's local we just return it without assuming a 'base' url (in the URL constructor)
     // and we let the URL be locally resolved with a potential base path.
     reqUrl = new URL(url);
+
+    // If the URL is in the form of "pmtiles://https://..." URL.href will be "pmtiles://https//..." dropping the ":"
+    // Adding the ":" back to the URL.href
+    if (url.startsWith("pmtiles://")) {
+      reqUrl.href = url;
+    }
   } catch (_e) {
     return {
       url,
