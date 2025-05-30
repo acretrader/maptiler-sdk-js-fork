@@ -68,11 +68,17 @@ export function maptilerCloudTransformRequest(url: string, resourceType?: Resour
     }
   }
 
-  const localCacheTransformedReq = localCacheTransformRequest(reqUrl, resourceType);
+  if(reqUrl.host === defaults.maptilerApiHost) {
+    const localCacheTransformedReq = localCacheTransformRequest(reqUrl, resourceType);
 
+    return {
+      url: localCacheTransformedReq,
+    };
+  } 
+  
   return {
-    url: localCacheTransformedReq,
-  };
+    url,
+  }
 }
 
 /**
